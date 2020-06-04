@@ -1,11 +1,9 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { FirebaseAppProvider } from "reactfire";
 import firebaseConfig from "./Firebase/FirebaseConfig.js";
-import "bootstrap/dist/css/bootstrap.css";
 
 // Browser Router
 import { BrowserRouter } from "react-router-dom";
