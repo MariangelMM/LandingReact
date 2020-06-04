@@ -2,7 +2,7 @@
 
 CRUD Reac + firebase Bootstrap
 
-### Resultado Fina
+### Resultado Final
 
 Pueder visualizar el resultado final en la dirección de arriba :)
 
