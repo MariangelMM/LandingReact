@@ -3,7 +3,7 @@ import Login from "./Login";
 
 const Home = () => {
     return (
-        <div className="container">
+        <div>
             <Login />
         </div>
     );
