@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import 'firebase/auth';
 import { useFirebaseApp, useUser } from 'reactfire';
 import { Link } from 'react-router-dom';
-import Products from "./Products";
+import Items from "./Items";
 import img1 from '../Style/user.png';
+import "../Style/style.css";
 
 const Auth = () => {
     const [email, setEmail] = useState('');
@@ -20,8 +21,19 @@ const Auth = () => {
 
     const buttonClick = event => {
         event.preventDefault();
-        login();
+        if (email === null || email === '' || password === null || password === '') {
+            alert('Todos los campos son requeridos')
+            return false;
+        }
+        else if (email.length > 100 || !expresion.test(email)) {
+            alert('Correo invalido')
+            return false;
+        } else {
+            login()
+        }
     };
+    const expresion = /\w+@\w+\.+[a-z]/;
+
     return (
         <div>
             {
@@ -36,13 +48,12 @@ const Auth = () => {
                                 <div className="form-group">
                                     <input
                                         name="email"
-                                        type="text"
+                                        type="email"
                                         className="form-control"
                                         placeholder="Enter your email"
                                         onChange={(e) => setEmail(e.target.value)}
+                                        required
                                     />
-                                    <div class="form-text text-muted">error</div>
-
                                 </div>
                                 <div className="form-group">
                                     <input
@@ -51,14 +62,14 @@ const Auth = () => {
                                         className="form-control"
                                         placeholder="Enter your password"
                                         onChange={(e) => setPassword(e.target.value)}
+                                        required
                                     />
-                                    <div className="form-text text-muted">error</div>
 
                                 </div>
                                 <button type="submit" className="btn" onClick={buttonClick}><i className="fas fa-sign-in-alt"></i> Login </button>
                             </form>
                             <div className="Login-forgetRegister">
-                                <Link className="btn-pink-link font " to="/register">Registrate</Link>
+                                <Link className="btn font " to="/register">Registrate</Link>
                             </div>
                         </div>
                     </div>
@@ -66,10 +77,9 @@ const Auth = () => {
 
             }
             {
-                user && <div className="row">
-                    <div className="col-md-12 justify-content-center">
-                        <Products />
-                    </div>
+                user &&
+                <div>
+                    <Items />
                 </div>
             }
         </div>

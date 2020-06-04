@@ -1,29 +1,50 @@
 import React, { useState } from "react";
 import 'firebase/auth';
 import { useFirebaseApp, useUser } from 'reactfire';
-import Productos from "./Products";
+import Items from "./Items";
 import { DataUser } from "../Firebase/dataUser";
 import img1 from "../Style/user.png";
+import "../Style/style.css";
 
 const Auth = () => {
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [uid, setUid] = useState('');
     const [password, setPassword] = useState('');
 
     const firebase = useFirebaseApp();
     const user = useUser();
 
     const submit = async () => {
-        const data = await firebase.auth().createUserWithEmailAndPassword(email, password)
+        await firebase.auth().createUserWithEmailAndPassword(email, password)
     }
 
-    console.log(user)
+
+    const expresionemail = /\w+@\w+\.+[a-z]/;
+    const expresionname = /[A-Z]+$/i;
+    const expresionpassword = /(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ]/;
+
     const buttonClick = event => {
         event.preventDefault();
-        submit();
-        DataUser(name, email, password)
+        if (email === null || email === '' || password === null || password === '' || name === null || name === '') {
+            alert('Todos los campos son requeridos')
+            return false;
+        }
+        else if (email.length > 100 || !expresionemail.test(email)) {
+            alert('Correo invalido')
+            return false
+        }
+        else if (email.length > 30 || !expresionname.test(name)) {
+            alert('Nombre invalido')
+            return false;
+        }
+        else if (password.length > 30 || !expresionpassword.test(password)) {
+            alert('Debe tener al menos una mayúscula, una minúscula y un dígito')
+            return false;
+        } else {
+            submit();
+            DataUser(name, email, password)
+        }
     };
 
     return (
@@ -47,7 +68,6 @@ const Auth = () => {
                                         placeholder="Enter your name"
                                         onChange={(e) => setName(e.target.value)}
                                     />
-                                    <div class="form-text text-muted">error</div>
 
                                 </div>
                                 <div className="form-group">
@@ -60,7 +80,6 @@ const Auth = () => {
                                         placeholder="Enter your email"
                                         onChange={(e) => setEmail(e.target.value)}
                                     />
-                                    <div class="form-text text-muted">error</div>
                                 </div>
                                 <div className="form-group">
                                     <input
@@ -70,17 +89,18 @@ const Auth = () => {
                                         className="form-control"
                                         placeholder="Enter your password"
                                         onChange={(e) => setPassword(e.target.value)}
+                                        pattern="(?=.*\d)(?=.*[a-záéíóúüñ]).*[A-ZÁÉÍÓÚÜÑ].*"
+                                        title="Debe tener al menos una mayúscula, una minúscula y un dígito"
                                     />
-                                    <div className="form-text text-muted">error</div>
                                 </div>
-                                <button type="submit" className="btn" onClick={buttonClick}><i className="fas fa-sign-in-alt"></i> Login </button>
+                                <button type="submit" className="btn" onClick={buttonClick}> Registrarse </button>
                             </form>
                         </div>
                     </div>
                 </div>
             }
             {
-                user && <Productos />
+                user && <Items />
             }
         </div >
     )

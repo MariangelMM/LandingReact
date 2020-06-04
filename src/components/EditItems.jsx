@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import "../Style/style.css";
 
 import { useHistory } from "react-router-dom"
 
 
 
-const EditItems = ({ data, editUpdate }) => {
+const EditItems = ({ key, data, editUpdate }) => {
     const history = useHistory();
 
     const [producto, guardarProducto] = useState({
-        titulo: '',
+        categoria: '',
+        nombre: '',
         descripcion: '',
         precio: '',
         imagen: ''
@@ -26,7 +28,7 @@ const EditItems = ({ data, editUpdate }) => {
             [e.target.name]: e.target.value
         })
     }
-    const { titulo, descripcion } = producto;
+    const { categoria, nombre, descripcion, precio, imagen } = producto;
 
 
     const handleFormSubmit = e => {
@@ -36,47 +38,74 @@ const EditItems = ({ data, editUpdate }) => {
     }
 
     return (
-        <div className="row justify-content-center">
-            <div className="col-md-8">
-                <div className="card">
-                    <div className="card-body">
-                        <h2 className="text-center mb-4 font-weight-bold">
-                            Editar Producto
+        <div key={key} className="row justify-content-center">
+            <div className="col-sm-8">
+                <div className="card-body">
+                    <h2 className="text-center mb-4 font-weight-bold">
+                        Editar Producto
                     </h2>
+                    <form onSubmit={handleFormSubmit}>
+                        <div className="form-group">
+                            <label>Categoria</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Categoria"
+                                name="categoria"
+                                value={categoria}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Nombre Producto</label>
+                            <input
+                                type="text"
+                                className="form-control"
+                                placeholder="Nombre Producto"
+                                name="titulo"
+                                value={nombre}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Descripcion</label>
+                            <input
+                                className="form-control"
+                                placeholder="Precio Producto"
+                                name="descripcion"
+                                value={descripcion}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Precio</label>
+                            <input
+                                className="form-control"
+                                placeholder="Precio Producto"
+                                name="precio"
+                                value={precio}
+                                onChange={handleInputChange}
+                            />
+                        </div>
+                        <div className="form-group">
+                            <label>Url Imagen</label>
+                            <input
+                                className="form-control"
+                                placeholder="Url Imagen"
+                                name="imagen"
+                                value={imagen}
+                                onChange={handleInputChange}
+                            />
+                        </div>
 
-                        <form onSubmit={handleFormSubmit}>
-                            <div className="form-group">
-                                <label>Nombre Producto</label>
-                                <input
-                                    type="text"
-                                    className="form-control"
-                                    placeholder="Nombre Producto"
-                                    name="titulo"
-                                    value={titulo}
-                                    onChange={handleInputChange}
-                                />
-                            </div>
-
-                            <div className="form-group">
-                                <label>Descripcion</label>
-                                <input
-                                    className="form-control"
-                                    placeholder="Precio Producto"
-                                    name="descripcion"
-                                    value={descripcion}
-                                    onChange={handleInputChange}
-                                />
-                            </div>
-
-                            <button
-                                type="submit"
-                                className="btn btn-primary font-weight-bold text-uppercase d-block w-100"
-                            >
-                                {" "}
-                                Guardar cambios
+                        <button
+                            type="submit"
+                            className="btn btn-primary font-weight-bold text-uppercase d-block w-100"
+                        >
+                            {" "}
+                            Guardar cambios
                       </button>
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -84,5 +113,4 @@ const EditItems = ({ data, editUpdate }) => {
 };
 
 export default EditItems;
-
 

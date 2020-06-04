@@ -12,7 +12,8 @@ body {
   padding: 0;
 }
 .modal-content {
-  background-color: #3b4652;
+  background-color: #848484;
+  color: #fff;
   opacity: 0.97;
   padding: 0 18px;
   box-shadow: 0px 0px 3px #848484;
@@ -36,7 +37,6 @@ body {
   border-radius: 5px;
   border: 0;
   font-size: 18px;
-  padding-left: 54px;
 }
 
 button {
@@ -57,7 +57,42 @@ btn:focus {
   background-color: #219899;
   border-bottom: 4px solid #219899 !important;
 }
-
 .card {
   width: 18rem;
+}
+.card img {
+  height: 100px;
+  width: 100px;
+  box-shadow: 0px 0px 0px #848484;
+}
+
+.p {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.style {
+  width: 15rem;
+  height: 17rem;
+}
+
+.cards {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+header {
+  background-color: #848484;
+  height: 170px;
+  border-radius: 40px;
 }
