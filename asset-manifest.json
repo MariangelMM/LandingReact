@@ -1,0 +1,37 @@
+{
+  "files": {
+    "main.css": "/LandingReact/static/css/main.eb9fa8bd.chunk.css",
+    "main.js": "/LandingReact/static/js/main.0261e65d.chunk.js",
+    "main.js.map": "/LandingReact/static/js/main.0261e65d.chunk.js.map",
+    "runtime-main.js": "/LandingReact/static/js/runtime-main.a1dd5064.js",
+    "runtime-main.js.map": "/LandingReact/static/js/runtime-main.a1dd5064.js.map",
+    "static/js/2.e056f273.chunk.js": "/LandingReact/static/js/2.e056f273.chunk.js",
+    "static/js/2.e056f273.chunk.js.map": "/LandingReact/static/js/2.e056f273.chunk.js.map",
+    "static/js/3.c23ec947.chunk.js": "/LandingReact/static/js/3.c23ec947.chunk.js",
+    "static/js/3.c23ec947.chunk.js.map": "/LandingReact/static/js/3.c23ec947.chunk.js.map",
+    "static/js/4.fcbb2bac.chunk.js": "/LandingReact/static/js/4.fcbb2bac.chunk.js",
+    "static/js/4.fcbb2bac.chunk.js.map": "/LandingReact/static/js/4.fcbb2bac.chunk.js.map",
+    "static/js/5.52174aa6.chunk.js": "/LandingReact/static/js/5.52174aa6.chunk.js",
+    "static/js/5.52174aa6.chunk.js.map": "/LandingReact/static/js/5.52174aa6.chunk.js.map",
+    "static/js/6.db195ec6.chunk.js": "/LandingReact/static/js/6.db195ec6.chunk.js",
+    "static/js/6.db195ec6.chunk.js.map": "/LandingReact/static/js/6.db195ec6.chunk.js.map",
+    "static/js/7.bcaa256e.chunk.js": "/LandingReact/static/js/7.bcaa256e.chunk.js",
+    "static/js/7.bcaa256e.chunk.js.map": "/LandingReact/static/js/7.bcaa256e.chunk.js.map",
+    "static/js/8.a3aa6bd4.chunk.js": "/LandingReact/static/js/8.a3aa6bd4.chunk.js",
+    "static/js/8.a3aa6bd4.chunk.js.map": "/LandingReact/static/js/8.a3aa6bd4.chunk.js.map",
+    "static/js/9.8d11ce65.chunk.js": "/LandingReact/static/js/9.8d11ce65.chunk.js",
+    "static/js/9.8d11ce65.chunk.js.map": "/LandingReact/static/js/9.8d11ce65.chunk.js.map",
+    "index.html": "/LandingReact/index.html",
+    "precache-manifest.4543653efe8a1dd4e38dde7c9e350722.js": "/LandingReact/precache-manifest.4543653efe8a1dd4e38dde7c9e350722.js",
+    "service-worker.js": "/LandingReact/service-worker.js",
+    "static/css/main.eb9fa8bd.chunk.css.map": "/LandingReact/static/css/main.eb9fa8bd.chunk.css.map",
+    "static/js/2.e056f273.chunk.js.LICENSE.txt": "/LandingReact/static/js/2.e056f273.chunk.js.LICENSE.txt",
+    "static/media/user.png": "/LandingReact/static/media/user.71566aee.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a1dd5064.js",
+    "static/js/2.e056f273.chunk.js",
+    "static/css/main.eb9fa8bd.chunk.css",
+    "static/js/main.0261e65d.chunk.js"
+  ]
+}
